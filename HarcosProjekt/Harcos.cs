@@ -8,5 +8,11 @@ namespace HarcosProjekt
 {
     class Harcos
     {
+        string nev;
+        int szint;
+        int tapasztalat;
+        int eletero;
+        int alapEletero;
+        int alapSebzes;
     }
 }
