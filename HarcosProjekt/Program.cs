@@ -10,7 +10,10 @@ namespace HarcosProjekt
     {
         static void Main(string[] args)
         {
+            Harcos harcos1 = new Harcos("Garrosh",2);
+            Console.WriteLine(harcos1.ToString());
 
+            Console.ReadKey();
         }
     }
 }
