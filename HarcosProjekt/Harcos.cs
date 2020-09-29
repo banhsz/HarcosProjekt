@@ -59,6 +59,7 @@ namespace HarcosProjekt
                 if (value<0)
                 {
                     eletero = 0;
+                    Tapasztalat = 0;
                 }
                 else
                 {
@@ -94,7 +95,7 @@ namespace HarcosProjekt
                 }
 
                 //tapasztalati pont kiértékelés
-                if (Eletero<=0)
+                if (Eletero==0)
                 //harcos 1 meghalt
                 {
                     if (masikHarcos.Eletero>0)
@@ -128,7 +129,14 @@ namespace HarcosProjekt
         }
         public void Gyogyul()
         {
-
+            if (eletero==0)
+            {
+                eletero = MaxEletero;
+            }
+            else
+            {
+                eletero += 3 + Szint;
+            }
         }
         public override string ToString()
         {
