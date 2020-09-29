@@ -59,7 +59,57 @@ namespace HarcosProjekt
         //metódusok
         public void Megkuzd(Harcos masikHarcos)
         {
+            if (masikHarcos==this)
+            {
+                Console.WriteLine("Saját magadat nem tudod támadni.");
+            }
+            else if (Eletero==0 || masikHarcos.Eletero==0)
+            {
+                Console.WriteLine("Legalább az egyik harcos halott");
+            }
+            else
+            {
+                //a kihívó támadja a másikat
+                masikHarcos.Eletero -= Sebzes;
 
+                //ha a megtámadott még él
+                if (masikHarcos.Eletero>0)
+                {
+                    Eletero -= masikHarcos.Sebzes;
+                }
+
+                //tapasztalati pont kiértékelés
+                if (Eletero<=0)
+                //harcos 1 meghalt
+                {
+                    if (masikHarcos.Eletero>0)
+                    {
+                        //Harcos 1 meghalt,Harcos 2 él
+                        masikHarcos.Tapasztalat += 15;
+                    }
+                    //else
+                    // {
+                        //Harcos 1 meghalt,Harcos 2 él
+                    // }
+                }
+                else 
+                //harcos 1 él
+                {
+                    if (masikHarcos.Eletero > 0)
+                    {
+                        //Harcos 1 él, Harcos 2 él
+                        Tapasztalat += 5;
+                        masikHarcos.Tapasztalat += 5;
+                    }
+                    else
+                    {
+                        //Harcos 1 él, Harcos 2 meghalt
+                        Tapasztalat += 15;
+                    }
+
+                }
+
+            }
         }
         public void Gyogyul()
         {
