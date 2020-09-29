@@ -19,7 +19,30 @@ namespace HarcosProjekt
         //konstruktor
         public Harcos(string nev,int statuszSablon)
         {
-
+            this.nev = nev;
+            this.szint = 1;
+            this.tapasztalat = 0;
+            switch(statuszSablon)
+            {
+                case 1:
+                    this.alapEletero = 15;
+                    this.alapSebzes = 3;
+                    break;
+                case 2:
+                    this.alapEletero = 12;
+                    this.alapSebzes = 4;
+                    break;
+                case 3:
+                    this.alapEletero = 8;
+                    this.alapSebzes = 5;
+                    break;
+                default:
+                    Console.WriteLine("Hibás státuszSablon érték");
+                    this.alapEletero = 15;
+                    this.alapSebzes = 3;
+                    break;
+            }
+            this.eletero = MaxEletero;
         }
 
         //get-setterek
