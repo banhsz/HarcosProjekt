@@ -48,7 +48,19 @@ namespace HarcosProjekt
         //get-setterek
         public string Nev { get => nev; set => nev = value; }
         public int Szint { get => szint; set => szint = value; }
-        public int Tapasztalat { get => tapasztalat; set => tapasztalat = value; }
+        public int Tapasztalat
+        { 
+            get => tapasztalat; 
+            set
+            {
+                if (tapasztalat>SzintLepeshez)
+                {
+                    tapasztalat -= SzintLepeshez;
+                    Szint++;
+                    Eletero = MaxEletero;
+                }
+            }
+        }
         public int AlapEletero { get => alapEletero; }
         public int AlapSebzes { get => alapSebzes; }
         public int Eletero 
@@ -60,6 +72,10 @@ namespace HarcosProjekt
                 {
                     eletero = 0;
                     Tapasztalat = 0;
+                }
+                else if (value>MaxEletero)
+                {
+                    eletero = MaxEletero;
                 }
                 else
                 {
