@@ -34,5 +34,17 @@ namespace HarcosProjekt
         public int MaxEletero { get => alapEletero + szint*3; }
 
         //metódusok
+        public void Megkuzd(Harcos masikHarcos)
+        {
+
+        }
+        public void Gyogyul()
+        {
+
+        }
+        public override string ToString()
+        {
+            return String.Format("");
+        }
     }
 }
