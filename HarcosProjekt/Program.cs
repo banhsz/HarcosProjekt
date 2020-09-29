@@ -3,35 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace HarcosProjekt
 {
     class Program
     {
+        static List<Harcos> harcosok = new List<Harcos>();
+        static void HarcosBeolvasas(string fajlnev)
+        {
+            StreamReader sr = new StreamReader(fajlnev,Encoding.Default);
+            while (!sr.EndOfStream)
+            {
+                string[] seged = sr.ReadLine().Split(';');
+                harcosok.Add(new Harcos(seged[0],Convert.ToInt32(seged[1])));
+            }
+            sr.Close();
+        }
         static void Main(string[] args)
         {
-            Harcos harcos1 = new Harcos("Garrosh",2);
-            Harcos harcos2 = new Harcos("Arthas",1);
-
-            //harcteszt
-            for (int i = 0; i < 6; i++)
+            harcosok.Add(new Harcos("Garrosh", 2));
+            harcosok.Add(new Harcos("Arthas", 1));
+            harcosok.Add(new Harcos("Garen", 3));
+            HarcosBeolvasas("harcosok.csv");
+            foreach (var item in harcosok)
             {
-                Console.WriteLine(harcos1.ToString());
-                Console.WriteLine(harcos2.ToString());
-                harcos1.Megkuzd(harcos2);
+                Console.WriteLine(item.ToString());
             }
-
-            //gyogyulasteszt
-            Console.WriteLine();
-            harcos2.Gyogyul();
-            Console.WriteLine(harcos1.ToString());
-            Console.WriteLine(harcos2.ToString());
-
-            harcos1.Gyogyul();
-            Console.WriteLine(harcos1.ToString());
-            Console.WriteLine(harcos2.ToString());
-            Console.WriteLine();
-
 
             Console.ReadKey();
         }
