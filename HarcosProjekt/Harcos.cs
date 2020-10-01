@@ -68,7 +68,7 @@ namespace HarcosProjekt
             get => eletero;
             set
             {
-                if (value<0)
+                if (value<=0)
                 {
                     eletero = 0;
                     Tapasztalat = 0;
