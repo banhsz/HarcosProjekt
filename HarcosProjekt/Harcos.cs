@@ -37,7 +37,6 @@ namespace HarcosProjekt
                     this.alapSebzes = 5;
                     break;
                 default:
-                    Console.WriteLine("Hibás státuszSablon érték");
                     this.alapEletero = 15;
                     this.alapSebzes = 3;
                     break;
