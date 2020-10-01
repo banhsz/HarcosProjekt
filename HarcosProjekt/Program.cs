@@ -10,6 +10,7 @@ namespace HarcosProjekt
     class Program
     {
         static List<Harcos> harcosok = new List<Harcos>();
+
         static void HarcosBeolvasas(string fajlnev)
         {
             StreamReader sr = new StreamReader(fajlnev,Encoding.Default);
@@ -20,16 +21,26 @@ namespace HarcosProjekt
             }
             sr.Close();
         }
-        static void Main(string[] args)
+        static void HarcosListaKiir(List<Harcos> harcosLista)
         {
-            harcosok.Add(new Harcos("Garrosh", 2));
-            harcosok.Add(new Harcos("Arthas", 1));
-            harcosok.Add(new Harcos("Garen", 3));
-            HarcosBeolvasas("harcosok.csv");
             foreach (var item in harcosok)
             {
                 Console.WriteLine(item.ToString());
             }
+        }
+
+        static void Main(string[] args)
+        {
+            
+            harcosok.Add(new Harcos("Garrosh", 2));
+            harcosok.Add(new Harcos("Arthas", 1));
+            harcosok.Add(new Harcos("Garen", 3));
+            HarcosBeolvasas("harcosok.csv");
+            HarcosListaKiir(harcosok);
+
+
+
+
 
             Console.ReadKey();
         }

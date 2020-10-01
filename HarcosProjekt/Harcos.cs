@@ -53,11 +53,16 @@ namespace HarcosProjekt
             get => tapasztalat; 
             set
             {
-                if (tapasztalat>SzintLepeshez)
+                if ((value)>=(SzintLepeshez))
                 {
+                    tapasztalat = value;
                     tapasztalat -= SzintLepeshez;
                     Szint++;
                     Eletero = MaxEletero;
+                }
+                else
+                {
+                    tapasztalat = value;
                 }
             }
         }
@@ -156,9 +161,9 @@ namespace HarcosProjekt
         }
         public override string ToString()
         {
-            return String.Format("{0} - LVL:{1} - EXP: {2}/{3} - HP: " +
-                "{4}/{5} - DMG: {6}",this.nev,this.szint,this.tapasztalat,
-                this.SzintLepeshez,this.eletero,this.MaxEletero,this.Sebzes);
+            return String.Format("{0,-10} - LVL:{1} - EXP: {2}/{3} - HP: " +
+                "{4}/{5} - DMG: {6}",this.Nev,this.Szint,this.Tapasztalat,
+                this.SzintLepeshez,this.Eletero,this.MaxEletero,this.Sebzes);
         }
     }
 }
