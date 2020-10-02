@@ -111,12 +111,14 @@ namespace HarcosProjekt
                             Console.WriteLine("\n{0}. kör, nincs élő ellenfél", korokSzama);
                         }
                         
-                        Console.WriteLine("Minden harcos gyógyul");
+                        Console.WriteLine("\nMinden harcos gyógyul");
                         foreach (Harcos item in harcosok)
                         {
                             item.Gyogyul();
                         }
-                        
+                        HarcosListaKiir(harcosok);
+                        Console.WriteLine();
+
                     }
                     else
                     {
