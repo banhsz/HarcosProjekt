@@ -61,7 +61,7 @@ namespace HarcosProjekt
             harcosok.Add(new Harcos(nev,sablon));
             HarcosListaKiir(harcosok);
             Console.WriteLine("Nyomj egy gombot a folytatáshoz");
-            Console.ReadKey();
+            Console.ReadLine();
             Console.Clear();
              
         }
@@ -110,7 +110,7 @@ namespace HarcosProjekt
                         {
                             Console.WriteLine("\n{0}. kör, nincs élő ellenfél", korokSzama);
                         }
-                        
+                        /*
                         Console.WriteLine("\nMinden harcos gyógyul");
                         foreach (Harcos item in harcosok)
                         {
@@ -118,7 +118,7 @@ namespace HarcosProjekt
                         }
                         HarcosListaKiir(harcosok);
                         Console.WriteLine();
-
+                        */
                     }
                     else
                     {
@@ -160,9 +160,9 @@ namespace HarcosProjekt
                         }
                         else
                         {
-                            Console.WriteLine("Meg vagy halva");
+                            Console.WriteLine(" ! Meg vagy halva ! ");
                             Console.WriteLine("Nyomj egy gombot a folytatáshoz");
-                            Console.ReadKey();
+                            Console.ReadLine();
                             break;
                         }
                     case 2:
@@ -170,7 +170,7 @@ namespace HarcosProjekt
                         harcosok[harcosok.Count - 1].Gyogyul();
                         Console.WriteLine(harcosok[harcosok.Count - 1].ToString());
                         Console.WriteLine("Nyomj egy gombot a folytatáshoz");
-                        Console.ReadKey();
+                        Console.ReadLine();
                         korokSzama++;
                         break;
                     case 3:
@@ -192,7 +192,7 @@ namespace HarcosProjekt
 
 
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
