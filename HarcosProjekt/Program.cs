@@ -80,6 +80,7 @@ namespace HarcosProjekt
                     if (korokSzama%3==0)
                     {
                         //Ez azért kell mert ha nincs élő ellenfél akkor senki ne támadja meg a játékost
+                        //Ezt úgy teszteltem hogy kiszedtem a 3. körönkénti gyógyulást így sose éledtek újra
                         List<int> halottHarcosok = new List<int>();
                         bool vanEloEllenfel = false;
                         int randomHarcos = -1;
@@ -109,6 +110,7 @@ namespace HarcosProjekt
                         {
                             Console.WriteLine("\n{0}. kör, nincs élő ellenfél", korokSzama);
                         }
+                        
                         Console.WriteLine("Minden harcos gyógyul");
                         foreach (Harcos item in harcosok)
                         {
