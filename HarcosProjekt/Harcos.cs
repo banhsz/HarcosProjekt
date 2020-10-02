@@ -149,13 +149,13 @@ namespace HarcosProjekt
         }
         public void Gyogyul()
         {
-            if (eletero==0)
+            if (Eletero==0)
             {
-                eletero = MaxEletero;
+                Eletero = MaxEletero;
             }
             else
             {
-                eletero += 3 + Szint;
+                Eletero += 3 + Szint;
             }
         }
         public override string ToString()
