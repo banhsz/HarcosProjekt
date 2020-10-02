@@ -67,7 +67,33 @@ namespace HarcosProjekt
         }
         static void Jatek()
         {
-
+            int korokSzama = 1;
+            bool jatekMegy = true;
+            while (jatekMegy)
+            {
+                int parancs = -1;
+                while (!(parancs >= 1 && parancs <= 3))
+                {
+                    Console.Clear();
+                    HarcosListaKiir(harcosok);
+                    Console.WriteLine("Mit szeretnél csinálni?");
+                    Console.WriteLine("1. Megküzdeni egy harcossal\n2. Gyógyulni\n3. Kilépni");
+                    parancs = Convert.ToInt32(Console.ReadLine());
+                }
+                switch (parancs)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        Console.WriteLine("Kiléptél");
+                        jatekMegy = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
         static void Main(string[] args)
         {
